@@ -1,0 +1,267 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Variables */
+:root {
+  --dark: hsl(0, 0%, 10%);
+  --darkOpacity: hsla(0, 0%, 10%, .2);
+  --light: hsl(0, 0%, 90%);
+  --beige: hsl(40, 70%, 91%);
+  --gray: hsl(0, 0%, 50%);
+  --color: hsl(219, 79%, 65%);
+  --color2: hsl(219, 79%, 50%);
+  --ff: "Montserrat", sans-serif;
+  --h1: 3rem/1.4em var(--ff);
+  --h2: 2rem/1.4em var(--ff);
+  --p: 1rem/1.5em var(--ff);
+  --pbold: 500 1.1rem/1.5em var(--ff);
+  --spacing1: .25em;
+  --spacing2: .5em;
+  --spacing3: 1em;
+  --spacing4: 1.25em;
+  --spacing5: 2.5em;
+  --spacing6: 5em;
+  --spacing7: 10em;
+  --transition: 0.3s ease-in-out;
+}
+
+/* Utility Classes */
+.color {
+  color: var(--color);
+}
+.light {
+  color: var(--light);
+}
+.beige {
+  color: var(--beige);
+}
+.dark {
+  color: var(--dark);
+}
+.gray {
+  color: var(--gray);
+}
+.pbold {
+  font: var(--pbold);
+}
+.center {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing2);
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.padding1 {
+  padding: var(--spacing1) 0;
+}
+.padding2 {
+  padding: var(--spacing2) 0;
+}
+.padding3 {
+  padding: var(--spacing3) 0;
+}
+.padding4 {
+  padding: var(--spacing4) 0;
+}
+.padding5 {
+  padding: var(--spacing5) 0;
+}
+.padding6 {
+  padding: var(--spacing6) 0;
+}
+.padding7 {
+  padding: var(--spacing7) 0;
+}
+.margin1 {
+  margin: var(--spacing1) auto;
+}
+.margin2 {
+  margin: var(--spacing2) auto;
+}
+.margin3 {
+  margin: var(--spacing3) auto;
+}
+.margin4 {
+  margin: var(--spacing4) auto;
+}
+.margin5 {
+  margin: var(--spacing5) auto;
+}
+.margin6 {
+  margin: var(--spacing6) auto;
+}
+.margin7 {
+  margin: var(--spacing7) auto;
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  text-wrap: balance;
+  font: var(--p);
+  background: var(--beige);
+}
+section {
+  margin: 0 auto;
+}
+h1 {
+  font: var(--h1);
+  margin: var(--margin2);
+}
+h2 {
+  font: var(--h2);
+}
+h3, h4 {
+  font-weight: 400;
+  margin: var(--spacing2) 0;
+}
+p {
+  font: var(--p);
+  margin: var(--spacing1) 0;
+}
+a {
+  color: var(--light);
+  font-size: 500;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+a:hover {
+  color: var(--light);
+  transition: var(--transition);
+}
+.underline-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 2px; 
+  background-color: var(--light); 
+  transform: scaleX(0); 
+  transition: transform 0.3s ease; 
+}
+.underline-link:hover::before {
+  transform: scaleX(1); 
+}
+.btn, button {
+  all: unset;
+  display: inline-block;
+  margin: var(--spacing2) 0;
+  background: var(--light);
+  padding: var(--spacing1) var(--spacing3);
+  color: var(--dark);
+  border: 2px solid var(--dark);
+  border-radius: var(--spacing2);
+  font: var(--pbold);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 4px 4px 0 var(--light);
+}
+.btn:hover, button:hover {
+  transform: translate(2px, 2px);
+  color: var(--dark);
+  box-shadow: 2px 2px 0 var(--light);
+  background: var(--beige);
+}
+img {
+  max-inline-size: 100%;
+}
+ul {
+  list-style: none;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: var(--spacing4) var(--spacing6);
+  background-color: var(--dark); 
+  color: var(--light);
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing4);
+}
+.icons {
+  display: flex; 
+  align-items: center;
+  gap: var(--spacing4);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  background-image: url('images/quatro.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0 */
+  background-color: rgba(0, 0, 0, 0.2); /* semi-transparent black */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; 
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* product section */
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+.product-card {
+  height: 400px;
+  width: 300px;
+  border: solid 2px var(--dark);
+  border-radius: var(--spacing2);
+  padding: var(--spacing2);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.underline {
+  border-bottom: solid 2px var(--dark);
+  margin: var(--margin2);
+}
