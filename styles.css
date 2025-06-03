@@ -20,6 +20,7 @@
   --h2: 2rem/1.4em var(--ff);
   --p: 1rem/1.5em var(--ff);
   --pbold: 500 1.1rem/1.5em var(--ff);
+  --psmall: .9rem/1.5em var(--ff);
   --spacing1: .25em;
   --spacing2: .5em;
   --spacing3: 1em;
@@ -49,6 +50,10 @@
 .pbold {
   font: var(--pbold);
 }
+.psmall {
+  font: var(--psmall);
+  margin: var(--spacing2) 0;
+}
 .center {
   text-align: center;
 }
@@ -58,8 +63,9 @@
 .flex {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: var(--spacing2);
+  gap: var(--spacing4);
 }
 .reverse {
   flex-direction: row-reverse;
@@ -137,6 +143,7 @@ h3, h4 {
   margin: var(--spacing2) 0;
 }
 p {
+  display: inline;
   font: var(--p);
   margin: var(--spacing1) 0;
 }
@@ -244,13 +251,8 @@ nav {
 
 /* product section */
 
-.card-container {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 3rem;
-}
 .product-card {
-  height: 400px;
+  height: fit-content;
   width: 300px;
   border: solid 2px var(--dark);
   border-radius: var(--spacing2);
@@ -263,5 +265,9 @@ nav {
 }
 .underline {
   border-bottom: solid 2px var(--dark);
+  margin: var(--margin2);
+}
+.topline {
+  border-top: solid 2px var(--dark);
   margin: var(--margin2);
 }
