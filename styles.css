@@ -69,11 +69,15 @@
   flex-wrap: wrap;
   gap: var(--spacing4);
 }
+
 .reverse {
   flex-direction: row-reverse;
 }
 .nowrap {
   flex-wrap: nowrap;
+}
+.align-start {
+  align-items: flex-start;
 }
 .flex-start {
   justify-content: flex-start;
@@ -273,7 +277,6 @@ nav {
 .topline {
   border-top: solid 2px var(--dark);
 }
-
 /* hero-divider */
 
 .hero-divider {
@@ -293,4 +296,17 @@ nav {
 footer {
   background-color: var(--dark);
   color: var(--light);
+}
+.f-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing1);
+  margin: var(--spacing4);
+}
+.logo {
+  margin-top: var(--spacing4);
+  width: 200px;
+}
+.footerline {
+  border-top: solid 2px var(--light);
 }
